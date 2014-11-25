@@ -1,0 +1,32 @@
+@import "compass";
+
+// Colors
+$button-bg-primary: red !default;
+$button-color-primary: color !default;
+// Size 
+$button-default-padding: 1em 2em 1em !default;
+// Features
+$button-round-cirlce: 50px;
+
+.btn {
+	padding: $button-default-padding;
+	border-radius: 0;
+	font-size: 0.813em;
+	text-transform: uppercase;
+	display: inline-block;
+	outline: none;
+	white-space: nowrap;
+	text-align: center;
+	@include box-shadow (0 0 3px rgba(black, 0.4));
+	&:hover {
+		
+	}
+	&.primary {
+		background: $button-bg-primary;
+		color: $button-color-primary;
+	}
+	&.btn-round {
+		padding: 0;
+		@include border-radius(100%);
+	}
+}
