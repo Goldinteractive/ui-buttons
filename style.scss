@@ -4,40 +4,71 @@
 $button-bg-primary: red !default;
 $button-text-primary: black !default;
 
-// Size 
-$button-default-padding: 1em 2em !default;
+// Shaddow
+$button-shadow-x-offset: 1px;
+$button-shadow-y-offset: 2px;
+$button-shadow-blur: 1px;
+$button-shadow-size: 4px;
+$button-shadow-color: black !default;
+$button-shadow-color-opacity: 0.4 !default;
+
+// Padding 
+$button-default-padding: 0.5em 1.2em !default;
+
+$button-small-padding: 0.2em 0.8em !default;
+$button-large-padding: 1em 3.5em !default;
+$button-huge-padding: 1.5em 4em !default;
+
+//Fontsize
 $button-default-font-size:  0.813em !default;
-$button-small-padding: 0.5em 1.5em !default;
-$button-large-padding: 2.5em 3.5em !default;
-$button-huge-padding: 3em 4em !default;
-$button-small-font-size: 0.5em !default;
-$button-large-font-size: 2.5em  !default;
-$button-huge-font-size: 3em  !default;
+
+$button-small-font-size: 0.6em !default;
+$button-large-font-size: 1.5em  !default;
+$button-huge-font-size: 2em  !default;
 
 // Features
-$button-round-cirlce: 100%;
+$button-border-radius: 5px;
 
-.btn {
+//Border
+$button-border-color: black;
+$button-border-width: 1px;
+
+.ui-btn {
 	padding: $button-default-padding;
 	border-radius: 0;
 	font-size: $button-default-font-size;
 	display: inline-block;
 	outline: none;
+	border: none;
 	white-space: nowrap;
 	text-align: center;
-	@include box-shadow (0 0 3px rgba(black, 0.4));
+	cursor: pointer;
+	@include box-shadow ($button-shadow-x-offset $button-shadow-y-offset $button-shadow-size $button-shadow-blur rgba($button-shadow-color, $button-shadow-color-opacity));
+	
 	&:hover {
 		
+	}
+	&.hoverable {
+		
+	}
+	&.bordered {
+		border: $button-border-width solid $button-border-color;
 	}
 	&.primary {
 		background: $button-bg-primary;
 		color: $button-text-primary;
 	}
+	&.no-shadow {
+		@include box-shadow (none);
+	}
+	&.rounded-corners {
+		@include border-radius($button-border-radius);
+	}
 	&.circle {
 		padding: 0 !important;
 		width: $button-default-font-size;
 		height: $button-default-font-size;
-		@include border-radius($button-round-cirlce);
+		@include border-radius(100%);
 		&.small {
 			width: $button-small-font-size;
 			height: $button-small-font-size;
@@ -65,5 +96,9 @@ $button-round-cirlce: 100%;
 	&.huge {
 		font-size:$button-huge-font-size;
 		padding: $button-huge-padding;
+	}
+	&.disabled {
+		cursor: default !important;
+		@include opacity (0.4);
 	}
 }
