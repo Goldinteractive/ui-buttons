@@ -2,17 +2,25 @@
 
 // Colors
 $button-bg-primary: red !default;
-$button-color-primary: color !default;
+$button-text-primary: black !default;
+
 // Size 
-$button-default-padding: 1em 2em 1em !default;
+$button-default-padding: 1em 2em !default;
+$button-default-font-size:  0.813em !default;
+$button-small-padding: 0.5em 1.5em !default;
+$button-large-padding: 2.5em 3.5em !default;
+$button-huge-padding: 3em 4em !default;
+$button-small-font-size: 0.5em !default;
+$button-large-font-size: 2.5em  !default;
+$button-huge-font-size: 3em  !default;
+
 // Features
-$button-round-cirlce: 50px;
+$button-round-cirlce: 100%;
 
 .btn {
 	padding: $button-default-padding;
 	border-radius: 0;
-	font-size: 0.813em;
-	text-transform: uppercase;
+	font-size: $button-default-font-size;
 	display: inline-block;
 	outline: none;
 	white-space: nowrap;
@@ -23,10 +31,39 @@ $button-round-cirlce: 50px;
 	}
 	&.primary {
 		background: $button-bg-primary;
-		color: $button-color-primary;
+		color: $button-text-primary;
 	}
-	&.btn-round {
-		padding: 0;
-		@include border-radius(100%);
+	&.circle {
+		padding: 0 !important;
+		width: $button-default-font-size;
+		height: $button-default-font-size;
+		@include border-radius($button-round-cirlce);
+		&.small {
+			width: $button-small-font-size;
+			height: $button-small-font-size;
+		}
+		&.large {
+			width: $button-large-font-size;
+			height: $button-large-font-size;
+		}
+		&.huge {
+			width: $button-huge-font-size;
+			height: $button-huge-font-size;
+		}
+	}
+	&.uppercase {
+		text-transform: uppercase;
+	}
+	&.small {
+		font-size:$button-small-font-size;
+		padding: $button-small-padding;
+	}
+	&.large {
+		font-size:$button-large-font-size;
+		padding: $button-large-padding;
+	}
+	&.huge {
+		font-size:$button-huge-font-size;
+		padding: $button-huge-padding;
 	}
 }
