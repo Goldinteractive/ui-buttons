@@ -43,6 +43,7 @@ $button-border-width: 1px;
 	white-space: nowrap;
 	text-align: center;
 	cursor: pointer;
+	text-decoration: none !important;
 	@include box-shadow ($button-shadow-x-offset $button-shadow-y-offset $button-shadow-size $button-shadow-blur rgba($button-shadow-color, $button-shadow-color-opacity));
 
 	&:hover {
@@ -108,5 +109,11 @@ $button-border-width: 1px;
 	&.disabled {
 		cursor: default !important;
 		@include opacity (0.4);
+	}
+	&.margin-right {
+		margin-right: 1em;
+	}
+	&.margin-left {
+		margin-left: 1em;
 	}
 }
