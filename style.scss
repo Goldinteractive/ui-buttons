@@ -5,10 +5,10 @@ $button-bg-primary: red !default;
 $button-text-primary: black !default;
 
 // Shaddow
-$button-shadow-x-offset: 1px;
-$button-shadow-y-offset: 2px;
-$button-shadow-blur: 1px;
-$button-shadow-size: 4px;
+$button-shadow-x-offset: 1px !default;
+$button-shadow-y-offset: 2px !default;
+$button-shadow-blur: 1px !default;
+$button-shadow-size: 4px !default;
 $button-shadow-color: black !default;
 $button-shadow-color-opacity: 0.4 !default;
 
@@ -44,7 +44,7 @@ $button-border-width: 1px;
 	text-align: center;
 	cursor: pointer;
 	@include box-shadow ($button-shadow-x-offset $button-shadow-y-offset $button-shadow-size $button-shadow-blur rgba($button-shadow-color, $button-shadow-color-opacity));
-	
+
 	&:hover {
 		
 	}
@@ -63,6 +63,14 @@ $button-border-width: 1px;
 	}
 	&.rounded-corners {
 		@include border-radius($button-border-radius);
+	}
+	&.white {
+		color: black;
+		background: white;
+	}
+	&.black {
+		color: white;
+		background: black;
 	}
 	&.circle {
 		padding: 0 !important;
