@@ -6,6 +6,8 @@ $icon-size: 38px !default;
 // Colors
 $button-bg-primary: red !default;
 $button-text-primary: black !default;
+$button-bg-secundary: blue !default;
+$button-text-secundary: white !default;
 
 // Shaddow
 $button-shadow-x-offset: 1px !default;
@@ -28,16 +30,16 @@ $button-default-margin: 1rem !default;
 //Fontsize
 $button-default-font-size:  1rem !default;
 
-$button-small-font-size: 0.6rem !default;
+$button-small-font-size: 0.8rem !default;
 $button-large-font-size: 1.5rem  !default;
-$button-huge-font-size: 2rem  !default;
+$button-huge-font-size: 2.5rem  !default;
 
 // Features
-$button-border-radius: 5px;
+$button-border-radius: 5px !default;
 
 //Border
-$button-border-color: black;
-$button-border-width: 1px;
+$button-border-color: black !default;
+$button-border-width: 1px !default;
 
 .ui-btn {
 	padding: $button-default-padding;
@@ -57,7 +59,6 @@ $button-border-width: 1px;
 
 	}
 	&.hoverable {
-
 	}
 	&.bordered {
 		border: $button-border-width solid $button-border-color;
@@ -66,10 +67,14 @@ $button-border-width: 1px;
 		background: $button-bg-primary;
 		color: $button-text-primary;
 	}
+	&.secundary {
+		background: $button-bg-secundary;
+		color: $button-text-secundary;
+	}
 	&.no-shadow {
 		@include box-shadow (none);
 	}
-	&.rounded-corners {
+	&.round-corners {
 		@include border-radius($button-border-radius);
 	}
 	&.white {
@@ -82,20 +87,20 @@ $button-border-width: 1px;
 	}
 	&.circle {
 		padding: 0 !important;
-		width: $button-default-font-size;
-		height: $button-default-font-size;
+		width: $button-default-font-size * 2;
+		height: $button-default-font-size * 2;
 		@include border-radius(100%);
 		&.small {
-			width: $button-small-font-size;
-			height: $button-small-font-size;
+			width: $button-small-font-size * 1.5;
+			height: $button-small-font-size * 1.5;
 		}
 		&.large {
-			width: $button-large-font-size;
-			height: $button-large-font-size;
+			width: $button-large-font-size * 2;
+			height: $button-large-font-size * 2;
 		}
 		&.huge {
-			width: $button-huge-font-size;
-			height: $button-huge-font-size;
+			width: $button-huge-font-size * 2;
+			height: $button-huge-font-size * 2;
 		}
 	}
 	&.uppercase {
@@ -154,8 +159,15 @@ $button-border-width: 1px;
 			}
 		}
 	}
+	&.center-icon {
+		i {
+			left:50%;
+			margin-left: - $icon-size / 2;
+		}
+	}
 
 	&.right-icon,
+	&.center-icon,
 	&.left-icon {
 		i {
 			position: absolute;
