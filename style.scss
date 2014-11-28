@@ -1,5 +1,8 @@
 @import "compass";
 
+// Common
+$icon-size: 38px !default;
+
 // Colors
 $button-bg-primary: red !default;
 $button-text-primary: black !default;
@@ -12,15 +15,18 @@ $button-shadow-size: 4px !default;
 $button-shadow-color: black !default;
 $button-shadow-color-opacity: 0.4 !default;
 
-// Padding 
-$button-default-padding: 0.5em 1.2em !default;
+// Padding
+$button-default-padding: 0.5rem 1.2rem !default;
 
-$button-small-padding: 0.2em 0.8em !default;
-$button-large-padding: 1em 3.5em !default;
-$button-huge-padding: 1.5em 4em !default;
+$button-small-padding: 0.2rem 0.8rem !default;
+$button-large-padding: 1rem 3.5rem !default;
+$button-huge-padding: 1.5rem 4rem !default;
+
+// Margin
+$button-default-margin: 1rem !default;
 
 //Fontsize
-$button-default-font-size:  0.813rem !default;
+$button-default-font-size:  1rem !default;
 
 $button-small-font-size: 0.6rem !default;
 $button-large-font-size: 1.5rem  !default;
@@ -38,6 +44,7 @@ $button-border-width: 1px;
 	border-radius: 0;
 	font-size: $button-default-font-size;
 	display: inline-block;
+	position: relative;
 	outline: none;
 	border: none;
 	white-space: nowrap;
@@ -47,10 +54,10 @@ $button-border-width: 1px;
 	@include box-shadow ($button-shadow-x-offset $button-shadow-y-offset $button-shadow-size $button-shadow-blur rgba($button-shadow-color, $button-shadow-color-opacity));
 
 	&:hover {
-		
+
 	}
 	&.hoverable {
-		
+
 	}
 	&.bordered {
 		border: $button-border-width solid $button-border-color;
@@ -111,9 +118,49 @@ $button-border-width: 1px;
 		@include opacity (0.4);
 	}
 	&.margin-right {
-		margin-right: 1em;
+		margin-right: $button-default-margin;
 	}
 	&.margin-left {
-		margin-left: 1em;
+		margin-left: $button-default-margin;
+	}
+	&.left-icon {
+		// A bit of magic
+		@if(length($button-default-padding) > 1){
+			padding-left: calc(#{$icon-size} + #{nth($button-default-padding,1)});
+		} @else {
+			padding-left: calc(#{$icon-size} + #{$button-default-padding});
+		}
+		i {
+			@if(length($button-default-padding) > 1){
+				left: nth($button-default-padding,1);
+			} @else {
+				left: $button-default-padding;
+			}
+		}
+
+	}
+	&.right-icon {
+		// A bit of magic
+		@if(length($button-default-padding) > 1){
+			padding-right: calc(#{$icon-size} + #{nth($button-default-padding,1)});
+		} @else {
+			padding-right: calc(#{$icon-size} + #{$button-default-padding});
+		}
+		i {
+			@if(length($button-default-padding) > 1){
+				right: nth($button-default-padding,1);
+			} @else {
+				right: $button-default-padding;
+			}
+		}
+	}
+
+	&.right-icon,
+	&.left-icon {
+		i {
+			position: absolute;
+			top: 50%;
+			@include transform(translateY(-50%));
+		}
 	}
 }
