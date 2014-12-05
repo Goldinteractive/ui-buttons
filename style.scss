@@ -45,6 +45,7 @@ $button-border-width: 1px !default;
 	padding: $button-default-padding;
 	border-radius: 0;
 	font-size: $button-default-font-size;
+	line-height: $button-default-font-size;
 	display: inline-block;
 	position: relative;
 	outline: none;
@@ -109,14 +110,17 @@ $button-border-width: 1px !default;
 	}
 	&.small {
 		font-size:$button-small-font-size;
+		line-height:$button-small-font-size;
 		padding: $button-small-padding;
 	}
 	&.large {
 		font-size:$button-large-font-size;
+		line-height:$button-large-font-size;
 		padding: $button-large-padding;
 	}
 	&.huge {
 		font-size:$button-huge-font-size;
+		line-height:$button-huge-font-size;
 		padding: $button-huge-padding;
 	}
 	&.disabled {
