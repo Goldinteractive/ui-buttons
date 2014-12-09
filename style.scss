@@ -81,7 +81,7 @@ $button-border-width: 1px !default;
 	&.white {
 		color: black;
 		background: white;
-		@include box-shadow($button-shadow-x-offset $button-shadow-y-offset $button-shadow-size $button-shadow-blur rgba($button-shadow-color, $button-shadow-color-opacity), inset 1px 1px 0px -1px rgba(0, 0, 0, 0.1));
+		@include box-shadow($button-shadow-x-offset $button-shadow-y-offset $button-shadow-size $button-shadow-blur rgba($button-shadow-color, $button-shadow-color-opacity), inset 1px 1px 1px -1px rgba(0, 0, 0, 0.6));
 	}
 	&.black {
 		color: white;
