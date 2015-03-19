@@ -191,12 +191,13 @@ $button-border-width: 1px !default;
 	&.center-icon {
 		i {
 			left: 50%;
-			margin-left: -$icon-size / 2;
+			top: 50%;
+			position: absolute;
+			@include transform(translate(-50%,-50%));
 		}
 	}
 
 	&.right-icon,
-	&.center-icon,
 	&.left-icon {
 		i {
 			position: absolute;
