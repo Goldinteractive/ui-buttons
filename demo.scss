@@ -1,8 +1,7 @@
-@import "bower_components/gi-scss-mixins/vendor/compass";
 @import "style";
 
 button {
-	margin:10px;
+	margin:10px !important;
 	float:left;
 	clear:both;
 }
