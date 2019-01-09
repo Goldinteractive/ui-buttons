@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Goldinteractive/ui-buttons/issues"
   },
-  "homepage": "https://github.com/Goldinteractive/ui-buttons#readme"
+  "homepage": "https://github.com/Goldinteractive/ui-buttons#readme",
+  "dependencies": {
+    "gi-scss-mixins": "https://github.com/Goldinteractive/scss-mixins"
+  }
 }
